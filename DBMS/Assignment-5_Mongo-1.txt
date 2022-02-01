@@ -1,0 +1,152 @@
+show dbs
+
+use test
+
+--Creation of Collection--
+db.createCollection("Student");
+
+--Insert--
+db.Student.insert({
+ Name:'kabir vora',
+ Age:22,
+ Class:'BCA-2',
+ Semester:6,
+ Add:'Dhg'
+})
+WriteResult({ "nInserted" : 1 })
+
+
+
+
+--Insert Many--
+db.Student.insertMany([{
+ Name:'raj',
+ Age:21,
+ Class:'BE',
+ Field:'Computer',
+ Semester:8,
+ Add:'Ahm'
+},
+{
+ Name:'jay',
+ Age:23,
+ Class:'ME',
+ Field:'Computer',
+ Semester:4,
+ Add:'Rjt'
+},
+{
+ Name:'karan',
+ Age:21,
+ Class:'MCA',
+ Semester:2,
+ Add:'Gandhinagar'
+},
+{
+ Name:'ram',
+ Class:'MSc',
+ Field:'IT',
+ Semester:4,
+},
+{
+ Name:'ravan',
+ Age:17,
+ Class:'Diploma',
+ Field:'Computer',
+ Semester:4,
+ Add:'Dhg'
+}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("61e7bacffbd38cd9e6abd1ad"),
+                ObjectId("61e7bacffbd38cd9e6abd1ae"),
+                ObjectId("61e7bacffbd38cd9e6abd1af"),
+                ObjectId("61e7bacffbd38cd9e6abd1b0"),
+                ObjectId("61e7bacffbd38cd9e6abd1b1")
+        ]
+}
+
+
+> db.Student.find()
+{ "_id" : ObjectId("61e7b630fbd38cd9e6abd1ac"), "Name" : "kabir vora", "Age" : 22, "Class" : "BCA-2", "Semester" : 6, "Add" : "Dhg" }
+{ "_id" : ObjectId("61e7bacffbd38cd9e6abd1ad"), "Name" : "raj", "Age" : 21, "Class" : "BE", "Field" : "Computer", "Semester" : 8, "Add" : "Ahm" }
+{ "_id" : ObjectId("61e7bacffbd38cd9e6abd1ae"), "Name" : "jay", "Age" : 23, "Class" : "ME", "Field" : "Computer", "Semester" : 4, "Add" : "Rjt" }
+{ "_id" : ObjectId("61e7bacffbd38cd9e6abd1af"), "Name" : "karan", "Age" : 21, "Class" : "MCA", "Semester" : 2, "Add" : "Gandhinagar" }
+{ "_id" : ObjectId("61e7bacffbd38cd9e6abd1b0"), "Name" : "ram", "Class" : "MSc", "Field" : "IT", "Semester" : 4 }
+{ "_id" : ObjectId("61e7bacffbd38cd9e6abd1b1"), "Name" : "ravan", "Age" : 17, "Class" : "Diploma", "Field" : "Computer", "Semester" : 4, "Add" : "Dhg" }
+
+
+
+
+--Remove--
+
+db.Student.remove({Name:"ravan"})
+WriteResult({ "nRemoved" : 1 })
+
+db.Student.find().pretty();
+> db.Student.find().pretty();
+{
+        "_id" : ObjectId("61e7b630fbd38cd9e6abd1ac"),
+        "Name" : "kabir vora",
+        "Age" : 22,
+        "Class" : "BCA-2",
+        "Semester" : 6,
+        "Add" : "Dhg"
+}
+{
+        "_id" : ObjectId("61e7bacffbd38cd9e6abd1ad"),
+        "Name" : "raj",
+        "Age" : 21,
+        "Class" : "BE",
+        "Field" : "Computer",
+        "Semester" : 8,
+        "Add" : "Ahm"
+}
+{
+        "_id" : ObjectId("61e7bacffbd38cd9e6abd1ae"),
+        "Name" : "jay",
+        "Age" : 23,
+        "Class" : "ME",
+        "Field" : "Computer",
+        "Semester" : 4,
+        "Add" : "Rjt"
+}
+{
+        "_id" : ObjectId("61e7bacffbd38cd9e6abd1af"),
+        "Name" : "karan",
+        "Age" : 21,
+        "Class" : "MCA",
+        "Semester" : 2,
+        "Add" : "Gandhinagar"
+}
+{
+        "_id" : ObjectId("61e7bacffbd38cd9e6abd1b0"),
+        "Name" : "ram",
+        "Class" : "MSc",
+        "Field" : "IT",
+        "Semester" : 4
+}
+
+--Update Query--
+
+> db.Student.update({Name:"ram"},{$set:{Age:22}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+
+> db.Student.find()
+{ "_id" : ObjectId("61e7b630fbd38cd9e6abd1ac"), "Name" : "kabir vora", "Age" : 22, "Class" : "BCA-2", "Semester" : 6, "Add" : "Dhg" }
+{ "_id" : ObjectId("61e7bacffbd38cd9e6abd1ad"), "Name" : "raj", "Age" : 21, "Class" : "BE", "Field" : "Computer", "Semester" : 8, "Add" : "Ahm" }
+{ "_id" : ObjectId("61e7bacffbd38cd9e6abd1ae"), "Name" : "jay", "Age" : 23, "Class" : "ME", "Field" : "Computer", "Semester" : 4, "Add" : "Rjt" }
+{ "_id" : ObjectId("61e7bacffbd38cd9e6abd1af"), "Name" : "karan", "Age" : 21, "Class" : "MCA", "Semester" : 2, "Add" : "Gandhinagar" }
+{ "_id" : ObjectId("61e7bacffbd38cd9e6abd1b0"), "Name" : "ram", "Class" : "MSc", "Field" : "IT", "Semester" : 4, "Age" : 22 }
+
+> db.Student.update({Add:"Dhg"},{$set:{Name:"kabir"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+> db.Student.find()
+{ "_id" : ObjectId("61e7b630fbd38cd9e6abd1ac"), "Name" : "kabir", "Age" : 22, "Class" : "BCA-2", "Semester" : 6, "Add" : "Dhg" }
+{ "_id" : ObjectId("61e7bacffbd38cd9e6abd1ad"), "Name" : "raj", "Age" : 21, "Class" : "BE", "Field" : "Computer", "Semester" : 8, "Add" : "Ahm" }
+{ "_id" : ObjectId("61e7bacffbd38cd9e6abd1ae"), "Name" : "jay", "Age" : 23, "Class" : "ME", "Field" : "Computer", "Semester" : 4, "Add" : "Rjt" }
+{ "_id" : ObjectId("61e7bacffbd38cd9e6abd1af"), "Name" : "karan", "Age" : 21, "Class" : "MCA", "Semester" : 2, "Add" : "Gandhinagar" }
+{ "_id" : ObjectId("61e7bacffbd38cd9e6abd1b0"), "Name" : "ram", "Class" : "MSc", "Field" : "IT", "Semester" : 4, "Age" : 22 }
