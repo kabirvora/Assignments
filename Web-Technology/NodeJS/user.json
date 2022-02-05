@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Kabir Vora",
+    "password": "kabir123",
+    "gender": "male",
+    "birthdate": "08/05/2000",
+    "age": 22,
+    "country": "india",
+    "phone": "+911234567899"
+  },
+  {
+    "id": 3,
+    "name": "Shrey",
+    "password": "Shrey",
+    "gender": "male",
+    "birthdate": "31/12/2000",
+    "age": 22,
+    "country": "india",
+    "phone": "+911234567899"
+  }
+]
