@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>E-COMMERCE</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+        li{
+            text-decoration: none;
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <div class="mb-3">
+                <label for="productName">Enter Product Name</label>
+                <input type="text" placeholder="Enter Product Name" name="productName" id="productName">
+            </div>
+            <div class="mb-3">
+                <label for="productName">Upload Image</label>
+                <input type="file" name="productImage" id="productImage" onchange="loadImg(event)">  
+            </div>
+            <div class="mb-3">
+                <label for="productName">Enter Description</label>
+                <input type="text" placeholder="Enter Description" name="productDescription" id="productDescription">
+            </div>
+            <div class="mb-3">
+                <label for="productName">Enter Quantity</label>
+                <input type="number" placeholder="Enter Quantity" name="productQuantity" id="productQuantity">
+            </div>
+            <div class="mb-3">
+                <label for="productName">Enter Price</label>
+                <input type="number" placeholder="Price" name="productprice" id="productPrice">
+            </div>
+            <div>
+                <input type="submit" class="btn btn-primary" name="submitButton" id="submitButton">
+            </div>
+        </div>
+        <hr>
+        <div class="item" id="listItems">
+            <h2>ITEMS AVAILABLE</h2><br>
+        </div>
+        <hr>
+        <div class="cart" id="cartListItems">
+            <h2>CART</h2><br>
+            <span style="font-weight: bolder;">Quantity - <span id="totalQuantity">0</span></span><br>
+            <span style="font-weight: bolder;">TOTAL - <span id="totalPrice">0</span></span><br>
+
+        </div>
+    </div>
+    <script>
+        const submitButton = document.getElementById("submitButton");
+        
+        var totalPrice = 0;
+        var totalQuantity = 0;
+        var imgURL = '';
+        function loadImg(event){
+            imgURL =  URL.createObjectURL(event.target.files[0]);
+            // alert(imgURL);
+            // alert(event.target.files[0]);
+        }
+        submitButton.addEventListener('click', function () {
+            const productName = document.getElementById("productName");
+            const productImage = document.getElementById("productImage");
+            const productDescription = document.getElementById("productDescription");
+            const productQuantity = document.getElementById("productQuantity");
+            const productPrice = document.getElementById("productPrice");
+            const listItems = document.getElementById("listItems");
+            const liName = document.createElement("li");
+
+            // creating/appending object when we hit submit button
+            var img = document.createElement("img");
+            img.style.width = "100px";
+            img.style.height = "100px";
+            img.src = imgURL;
+            listItems.appendChild(img);
+
+            //it will generate list of items
+            liName.innerHTML = "<span style='font-weight:bolder;font-size:20px;'>"+productName.value+"</span><br>"+productDescription.value+"<br>Quantity-<span id='listQuantity'>" +productQuantity.value+ "</span> <br>Price - "+productPrice.value+"Rs. <br>";
+            listItems.appendChild(liName);
+
+
+            //buy button is created when we hit submit button
+            const buyButton = document.createElement("button");
+            buyButton.innerHTML = "BUY";
+            listItems.appendChild(buyButton);
+
+            // blank space 
+            const blankSpace = document.createElement("span");
+            blankSpace.innerHTML = "<br><br>";
+            listItems.appendChild(blankSpace);
+
+            // cart layout
+            const fPrice = productPrice.value;
+            const fNamePrice = productName.value + "  -  "+productPrice.value +"Rs.   "
+            productPrice.value = '';
+            productName.value = '';
+            // productQuantity.value = '';
+            productDescription.value = '';
+
+            //function of button buy
+            buyButton.onclick = function(){
+                let fQuantity = document.getElementById("listQuantity").innerText;
+                fQuantity = parseInt(fQuantity);
+                // alert(fQuantity); 
+                fQuantity--;
+
+
+
+                // document.getElementById("listQuantity").innerText = fQuantity;
+                totalPrice = parseInt(fPrice) + totalPrice ;
+                let totalQuan = totalQuantity++;
+
+
+
+                document.getElementById("totalPrice").innerText = totalPrice;
+                document.getElementById("totalQuantity").innerText = totalQuantity;
+                
+                // document.getElementById("productQuantity").innerText = productQuantity;
+            
+
+                const cartLiName = document.createElement("li");
+                cartLiName.innerHTML = fNamePrice
+                
+                var removeButton = document.createElement("button");
+                removeButton.innerHTML = "REMOVE";
+                cartLiName.appendChild(removeButton);
+                
+                const cartListItems = document.getElementById("cartListItems");
+                cartListItems.appendChild(cartLiName);
+                
+                removeButton.onclick = function() {
+                    totalPrice = totalPrice - parseInt(fPrice);
+                    document.getElementById("totalPrice").innerText = totalPrice;
+                    totalQuan = totalQuantity--;
+                    document.getElementById("totalQuantity").innerText = totalQuantity;
+
+                    // alert(fQuantity);
+                    // document.getElementById('listQuantity').innerText = fQuantity++;
+                    // fQuantity;
+
+                    cartListItems.removeChild(cartLiName);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+.container{
+    position: relative;
+    display: flex;
+    padding-top: 10px;
+    flex-wrap: wrap;
+    border: 1px solid black;
+}
+.form{
+    position: relative;
+    display: flex;
+    width: 500px;
+    height: 300px;
+    flex-direction: column;
+    left: 0;
+    
+}
+
+.item{
+    position: absolute;
+    right: 10px;
+    width: 500px;
+    height: 100%;
+    
+    
+}
+.cart{
+    position: absolute;
+    left: 0;
+    margin-top: 300px;
+    
+}
