@@ -1,0 +1,9 @@
+n = input("Enter n Element")
+Arr = []
+for i in range (n):
+	Arr.append()
+	output = 0
+	for j in range(i):
+		if Arr[j]  < Arr[i]:
+			output++
+	print (output)
