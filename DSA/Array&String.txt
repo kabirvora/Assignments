@@ -1,0 +1,107 @@
+Data Structure and Algorithms  
+(HackerEarth Solved Answers) 2022  
+Kabir Vora
+AIMDek Trainee
+
+https://www.hackerearth.com/practice/codemonk/
+
+1)Monk & Rotation
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.*;
+class MonkRotation
+    {
+        public static void main(String[] args)
+        {
+            Scanner s = new Scanner(System.in);
+            int t = s.nextInt();
+            for (int i = 0; i < t; i++) {
+                int n = s.nextInt();
+                int k = s.nextInt();
+                k = k % n;
+                s.nextLine();
+                String input = s.nextLine();
+                String[] inputStringArray = input.split(" ");
+                StringBuffer StringBuf = new StringBuffer();
+                for (int j = 0;  j < n; j++) {
+                    StringBuf.append( inputStringArray[ (n + j - k) % n ] + " " );
+                }
+                System.out.print(StringBuf );
+                System.out.println("");
+            }
+            s.close();
+        }
+    }
+
+====================================================================
+2) Monk and Inversion
+
+import java.util.*;
+class MonkInvesion {
+    public static void main(String args[])  {
+        Scanner s = new Scanner(System.in);
+
+        int test = s.nextInt();
+        for(int i=0; i<test; i++)
+        {
+            int n = s.nextInt();
+            int[][] twoD= new int[n][n];
+            for(int j=0; j<n; j++){
+
+                for(int k=0; k<n; k++){
+                    twoD[j][k]= s.nextInt();
+                }
+            }
+            int output=0;
+            int z=0;
+            for(int j=0; j<n; j++){
+
+                for(int k=0; k<n; k++){
+                    z= twoD[j][k];
+                    int p=j;
+                    int q=k;
+                    for(int x=0; x<n; x++){
+                        for(int y=0; y<n; y++){
+                            if(p<=x && q<=y){
+                                if(z > twoD[x][y]){
+                                    output+=1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            System.out.println(output);
+        }
+    }
+}
+
+====================================================================
+
+3) Minimum And or Xor
+
+import java.util.*;
+class LogicGate {
+    public static void main(String args[] ) throws Exception {
+        Scanner s = new Scanner(System.in);
+        int test = s.nextInt();
+        while(test>0) {
+            test--;
+            int n = s.nextInt();
+            int[] myArr = new int[n];
+            for(int i=0;i<n;i++) {
+                myArr[i] = s.nextInt();
+            }
+            Arrays.sort(myArr);
+            int min = myArr[n-1];
+            for(int i=n-1;i>0;i--) {
+                if(min > (myArr[i] ^ myArr[i-1])) {
+                    min = myArr[i] ^ myArr[i-1];
+                }
+            }
+            System.out.println(min);
+        }
+        s.close();
+    }
+}
