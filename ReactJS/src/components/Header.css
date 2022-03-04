@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+#Navbar{
+    background-color: rgb(224, 147, 147);
+    font-family: 'Muli', serif;
+    font-size: large;
+
+
+}
+#NavDropdown, #collasible-nav-dropdown-Kids,#collasible-nav-dropdown-Men, #collasible-nav-dropdown-Women, #NavLink{
+    font-weight: bolder;
+}
+
+#icon{
+    margin-right: 20px;
+}

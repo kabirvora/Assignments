@@ -1,0 +1,24 @@
+#main-box, #create{
+    width: 100%;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+#success-msg{
+    width: 100%;
+    height: 40px;
+    padding: 6px;
+    background-color: rgb(182, 216, 138);
+    color: rgb(70, 160, 10);
+    border-radius: 5px;
+    text-align: center;
+
+}
+#error-msg{
+    width: 100%;
+    height: 40px;
+    padding: 6px;
+    background-color: antiquewhite;
+    color: red;
+    border-radius: 5px;
+    text-align: center;
+}

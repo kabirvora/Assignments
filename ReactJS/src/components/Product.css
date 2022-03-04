@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+.product-img{
+    height: 200px;
+    width: 150px;
+    overflow: hidden;
+}
+#heading{
+    background-color: white;
+    color: black;
+    font-family: 'Muli', serif;
+    font-weight: bolder;
+}
+#head-container{
+    margin-top: 20px;
+    text-align: center;
+}
+#card {
+    border: 1px solid rgb(224, 147, 147);
+    border-radius: 5px;
+    font-family: 'Muli', serif;
+    text-align: center;
+    background-color: rgb(214, 202, 202);
+    /* color: white; */
+}
+select{
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}
+Button{
+    width: 100%;
+    letter-spacing: 1px;
+}
