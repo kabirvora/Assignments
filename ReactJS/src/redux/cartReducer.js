@@ -21,7 +21,7 @@ export const cartReducer =(state=initialState, action)=>{
         case 'emptyCart' :{
             return{
                 ...state,
-                cartProducts: []   //filters the products id
+                cartProducts: []   //it will empty the cart 
             }
         }
         default: return state

@@ -5,7 +5,7 @@ import './Product.css'
 import db from '../configuration/config'
 import { onAuthStateChanged } from 'firebase/auth';
 import {Navigate} from 'react-router-dom'
-import {Button, Spinner} from 'react-bootstrap'
+import {Button, Alert} from 'react-bootstrap'
 import { useDispatch, useSelector } from "react-redux";
 
 // export const controlProducts =[];
@@ -66,12 +66,10 @@ function Products(){
                                 {/* <h5>{products.Category.Gender}</h5> */}
                                 <p><b> ₹{products.Price}</b></p>
                                 {/* {isUser ? */}
-                                <Button variant="warning" id="to-cart"  onClick={()=>{controlProducts(products)}}>
+
+                                <Button variant="warning" id="to-cart" onClick={()=>{controlProducts(products)}}>
                                         Add to Cart
                                 </Button>
-                                {/* // :
-                                // <Navigate to='/rule' />
-                                // } */}
                             </div>
                         </div>
                     })}

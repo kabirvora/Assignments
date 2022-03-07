@@ -53,8 +53,8 @@ function Header(){
                                 <LogoutIcon sx={{ fontSize: 30, color: "black"}} />
                             </IconButton>
                             :
-                            <IconButton aria-label="cart" component="span" id="icon" as={Link} to={'/cart'}>
-                                <LocalMallOutlinedIcon sx={{ fontSize: 30, color: "black"}} />
+                            <IconButton aria-label="cart" component="span" id="icon" >
+                                <LocalMallOutlinedIcon sx={{ fontSize: 30, color: "disabled"}} />
                             </IconButton>
                         }
                     </Nav>
