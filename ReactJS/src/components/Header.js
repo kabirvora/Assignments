@@ -4,6 +4,7 @@ import { IconButton } from '@mui/material';
 import './Header.css'
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { createRoutesFromChildren, Link, useNavigate } from 'react-router-dom'
 import {auth} from '../configuration/config'
@@ -48,10 +49,15 @@ function Header(){
                                 <PersonOutlineIcon fontSize="large" sx={{ color: "black" }}/>
                             </IconButton>
                         }
-                        {isUser ?
+                        {isUser ? <>
                             <IconButton aria-label="logout" component="span"  id="icon" onClick={controlLogout}>
                                 <LogoutIcon sx={{ fontSize: 30, color: "black"}} />
                             </IconButton>
+                            <IconButton aria-label="orders" component="span"  id="icon" as={Link} to={'/orders'}>
+                            <LocalShippingIcon sx={{ fontSize: 30, color: "black"}} />
+                            </IconButton>
+                            </>
+                            
                             :
                             <IconButton aria-label="cart" component="span" id="icon" >
                                 <LocalMallOutlinedIcon sx={{ fontSize: 30, color: "disabled"}} />

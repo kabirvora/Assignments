@@ -40,6 +40,7 @@ function Products(){
     useEffect(() =>{
         localStorage.setItem('cartProducts', JSON.stringify(cartProducts));
     })
+    
     const controlProducts=(products)=>{
         dispatch({type:'addToCart', payload: products})
     }
