@@ -1,0 +1,16 @@
+<div class="forms-container" >
+    <h1 class="center">CREATE ACCOUNT</h1>
+    <form >
+        <mat-form-field appearance="legacy">
+            <input matInput placeholder="Email Address" type="email" [(ngModel)]="email" name="email">
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+            <input matInput placeholder="Password" type="password" [(ngModel)]="password" name="password">
+        </mat-form-field>
+        <div class="center margin-top">
+        <button mat-raised-button  class="btn" type="submit" (click)="signUp()" >
+            CREATE ACCOUNT
+        </button>
+    </div>
+    </form>
+</div>

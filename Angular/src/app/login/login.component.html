@@ -1,0 +1,20 @@
+<div class="forms-container">
+    <h1 class="center">LOGIN</h1>
+    <form>
+        <mat-form-field appearance="legacy">
+            <input matInput placeholder="Email Address" type="email" [(ngModel)]="email" name="email">
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+            <input matInput placeholder="Password" type="password" [(ngModel)]="password" name="password">
+        </mat-form-field>
+        <div class="center margin-top">
+        <button mat-raised-button color="primary" class="btn" type="submit" (click)="login()" >
+            LOGIN
+        </button>
+    </div>
+        <p class="margin-top">Don't Have an Account</p>
+        <button mat-flat-button routerLink="/register">
+            Create One
+        </button>
+    </form>
+</div>

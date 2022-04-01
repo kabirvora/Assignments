@@ -1,0 +1,31 @@
+<div className="container">
+    <div className="row">
+        <div id="head-container">
+            <h2 id="heading">Products</h2>
+        </div>
+        <div class="select-container">
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" (change)="selectCategory($event)">
+                <option selected value="">View All Products</option>
+                <option value="Men">Men</option>
+                <option value="Women">Women</option>
+                <option value="Electronics">Electronics</option>
+            </select><br />
+        </div>
+        <div class="grid-container">
+            <div *ngFor="let product of products | filter:filter">
+                <div class="col-md-3">
+                    <div class="m-2 p-2" id="card">
+                        <div class="image-zoom">
+                            <img class="product-img" src={{product.url}} />
+                        </div>
+                        <h5> {{product.Name}} </h5>
+                        <p>Price {{product.Price}}</p>
+                        <button mat-raised-button color="accent" (click)="addToCart(product)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

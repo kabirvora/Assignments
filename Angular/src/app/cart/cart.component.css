@@ -1,0 +1,63 @@
+.cart-head{
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h2{
+    justify-content: center;
+    align-content: center;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+.ratings mat-icon {
+    font-size: 16px;
+    color: red;
+}
+.ratings .star-dull {
+    font-size: 16px;
+    color: rgb(148, 148, 148);
+}
+.strike-text {
+    color: red;
+    text-decoration: line-through
+}
+.spec-1 {
+    color: #938787;
+    font-size: 15px
+}
+
+h5 {
+    font-weight: 400
+}
+
+.para {
+    font-size: 16px
+}
+.text-success{
+    color: green;
+    font-size: large;
+}
+.btn{
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+.empty-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10%;
+}
+.cart{
+    display: flex;
+    flex-direction:row;
+    overflow:visible;
+}
+.cart-grand-total{
+    padding: 5%
+}
+.grid-container{
+    padding-left: 3%;
+}

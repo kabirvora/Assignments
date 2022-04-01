@@ -1,5 +1,5 @@
 .container {
-  background-color: rgba(202, 202, 202, 0.651);
+  background-color: rgba(255, 134, 134, 0.651);
   border-radius: 6px;
   width: 100%;
   height: 100%;
@@ -9,7 +9,7 @@
   position: relative;
 }
 .first-page{
-  background-color: rgba(202, 202, 202, 0.651);
+  background-color: rgba(255, 115, 115, 0.651);
   border-radius: 6px;
   width: 75%;
   height: 400px;

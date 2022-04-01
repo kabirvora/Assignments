@@ -1,0 +1,21 @@
+<div class="head">
+    My Orders
+</div>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let yourPastOrders of orderItems">
+            <tr *ngFor="let items of yourPastOrders">
+                <td><img class="img" src="{{items.url}}"> </td>
+                <td>{{items.Name}}</td>
+                <td>₹{{items.Price}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

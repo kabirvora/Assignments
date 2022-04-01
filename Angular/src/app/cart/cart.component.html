@@ -1,0 +1,124 @@
+<div class="cart-head" *ngIf="cartproducts.length !=0">
+    <h2>My Cart</h2>
+</div>
+<div class="empty-cart" *ngIf="cartproducts.length == 0">
+    <h1>Hi! Your Cart Is Empty </h1>
+    <button mat-raised-button color="accent" routerLink="/">Purchase Something</button>
+</div>
+<div class="cart">
+    <div class="grid-container" *ngIf="cartproducts.length != 0">
+        <div *ngFor="let products of cartproducts">
+            <!-- <div class="col-md-3">
+            <div class="m-2 p-2" id="card">
+                <div class="image-zoom">
+                    <img class="product-img" src={{products.url}} />
+                </div>
+                <h5> {{products.Name}} </h5>
+                <p>{{products.Price}} </p>
+                <button mat-raised-button color="accent">
+                    remove
+                </button>
+            </div>
+        </div> -->
+
+            <!-- <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col-md-2">Image</th>
+                    <th scope="col-md-1">Name</th>
+                    <th scope="col-md-1">Price</th>
+                    <th scope="col-md-1">Quantity</th>
+                    <th scope="col-md-1">Sub Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img class="product-img" src={{products.url}} /></td>
+                    <td>{{products.Name}}</td>
+                    <td>{{products.Price}}</td>
+                    <td>1</td>
+                    <td>{{products.Price}}</td>
+                    <td> <button mat-raised-button color="accent">
+                            remove
+                        </button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table> -->
+            <div class="row p-2 bg-white border rounded">
+                <div class="col-md-3 mt-1">
+                    <img class="img-fluid img-responsive rounded product-image" src={{products.url}}>
+                </div>
+                <div class="col-md-6 mt-1">
+                    <h5>{{products.Name}}</h5>
+                    <div class="d-flex flex-row">
+                        <div class="ratings mr-2">
+                            <mat-icon class="star" aria-hidden="false" aria-label="Example home icon">star</mat-icon>
+                            <mat-icon class="star" aria-hidden="false" aria-label="Example home icon">star</mat-icon>
+                            <mat-icon class="star" aria-hidden="false" aria-label="Example home icon">star</mat-icon>
+                            <mat-icon class="star" aria-hidden="false" aria-label="Example home icon">star</mat-icon>
+                            <mat-icon class="star-dull" aria-hidden="false" aria-label="Example home icon">star
+                            </mat-icon>
+                        </div>
+                    </div>
+                    <p class="text-justify text-truncate para mb-0">{{products.Description}}<br><br></p>
+                </div>
+                <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                    <div class="d-flex flex-row align-items-center">
+                        <h4 class="mr-1">₹{{products.Price}}</h4>
+                    </div>
+                    <h6 class="text-success">Free shipping</h6>
+                    <div class="d-flex flex-column mt-4">
+                        <button class="btn btn-outline-warning btn-sm mt-2" (click)="removeItem(products)"
+                            type="button">
+                            <mat-icon>
+                                delete
+                            </mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="cart-grand-total" *ngIf="cartproducts.length != 0">
+        <p>Grand Total : ₹{{total}}</p>
+        <button mat-raised-button routerLink="/checkout">Checkout </button>
+    </div>
+</div>
+
+
+<!-- 
+<table>
+        <ng-container matColumnDef="image">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let products"> <img class="product-img" src={{products.url}} /> </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let products"> {{products.Name}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef> Price </th>
+            <td mat-cell *matCellDef="let products"> {{products.Price}} </td>
+        </ng-container>
+        <ng-container matColumnDef="quantity">
+            <th mat-header-cell *matHeaderCellDef> Quantity </th>
+            <td mat-cell *matCellDef="let products"> 1 </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="sprice">
+            <th mat-header-cell *matHeaderCellDef> Sub Total </th>
+            <td mat-cell *matCellDef="let products"> {{products.Price}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table> -->

@@ -1,0 +1,11 @@
+.img{
+    width: 150px;
+    height: 175px;
+}
+.head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    font-weight: 600;
+}

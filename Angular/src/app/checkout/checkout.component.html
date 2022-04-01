@@ -1,0 +1,22 @@
+<div class="container">
+    <form class="form-container">
+        <ng-container>
+            <p class="head">Add Details</p>
+        </ng-container>
+        <mat-form-field appearance="legacy">
+            <input matInput placeholder="Name" type="text" [(ngModel)]="name" name="name" required>
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+            <mat-label>Address</mat-label>
+            <textarea matInput [(ngModel)]="address" name="address" required></textarea>
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+            <input matInput placeholder="Contact Number" type="text" [(ngModel)]="mnumber" name="mnumber" required>
+        </mat-form-field>
+        <div class="center margin-top">
+            <button mat-raised-button color="primary" class="btn" (click)="createCollection()" routerLink="/">
+                BUY NOW
+            </button>
+        </div>
+    </form>
+</div>

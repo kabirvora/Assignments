@@ -1,0 +1,28 @@
+<mat-toolbar>
+    <a routerLink="/">STORE.ly</a>
+    <div>
+        <ng-container>
+            <button mat-icon-button routerLink="/login" *ngIf="!userControl">
+                <!-- <> -->
+                <mat-icon>person</mat-icon>
+            </button>
+        </ng-container>
+        <ng-container>
+            <button mat-icon-button routerLink="/cart">
+                <mat-icon>shopping_bag</mat-icon>
+            </button>
+        </ng-container>
+        <ng-container  *ngIf="userControl">
+            <ng-container>
+                <button mat-icon-button routerLink="/orders">
+                    <mat-icon>markunread_mailbox</mat-icon>
+                </button>
+            </ng-container>
+            <ng-container>
+                <button mat-icon-button (click)="logout()" *ngIf="userControl">
+                    <mat-icon>logout</mat-icon>
+                </button>
+            </ng-container>
+        </ng-container>
+    </div>
+</mat-toolbar>

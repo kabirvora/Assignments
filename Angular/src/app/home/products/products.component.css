@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+.product-img{
+    height: 250px;
+    width: 200px;
+    overflow: hidden;
+}
+#heading{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-family: 'Muli', serif;
+    font-weight: bolder;
+}
+#head-container{
+    margin-top: 20px;
+    text-align: center;
+
+}
+#card {
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    font-family: 'Muli', serif;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+}
+#card:hover img{
+    box-shadow: 1px 5px 10px;
+}
+.image-zoom img{
+    transform-origin: 0 0;
+  transition: transform .25s, visibility .25s ease-in;
+}
+.image-zoom:hover img{
+    transform: scale(1.2);
+}
+.col-md-3{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content:center;
+    grid-auto-rows: minmax(100px, auto);
+    align-content: center;
+    align-items: center;
+}
+select{
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Muli', serif;
+
+}
+.select-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+Button{
+    width: 100%;
+    letter-spacing: 1px;
+    font-family: 'Muli', serif;
+    color: white;
+}
+h5{
+    font-size: large;
+    padding-top: 5px;
+    font-family: 'Muli', serif;
+}

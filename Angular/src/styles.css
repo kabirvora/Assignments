@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+html, body { height: 100%; }
+body { margin: 0;     font-family: 'Muli', serif; }
+
+.forms-container{
+    display: block;
+    max-width: 500px;
+    margin: auto;
+    background-color:rgb(236, 195, 222);
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 2px 3px 5px;
+}
+.forms-container mat-form-field{
+    width: 100%;
+}
+.center{
+    display: flex;
+    justify-content: center;
+}
+.margin-top{
+    margin-top: 14px;
+}
+.text-align{
+    text-align: center;
+}
